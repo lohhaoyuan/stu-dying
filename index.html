@@ -30,7 +30,7 @@
         function updateClock() {
             var now = new Date(), // current date
             months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']// you get the idea
-            time = now.getHours() + ':' + now.getMinutes() + ':' + prependZero(now.getSeconds()), // again, you get the idea
+            time = prependZero(now.getHours()) + ':' + prependZero(now.getMinutes()) + ':' + prependZero(now.getSeconds()), // again, you get the idea
             
             // a cleaner way than string concatenation
             date = [now.getDate(), 
