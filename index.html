@@ -1,50 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+  <head>
     <title>🕣</title>
-    <link rel="stylesheet" href="global.css">
-</head>
-<body>
-    <div class="">
+    <link rel="stylesheet" href="global.css" />
+  </head>
+  <body>
+    <div id="heroimg"></div>
+    <div id="herotext">
+      <div class="">
         <h1 id="time" class="center"></h1>
         <h2 id="date" class="botcenter"></h2>
-        <div class="center">
-            <label class="switch" >
-                <input type="checkbox" onclick="darkmode()">
-                <span class="slider round"></span>
-              </label>
-        </div>
+      </div>
     </div>
-    
+
     <script>
-        function darkmode() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-        }
-        function prependZero(number) {
-            if (number < 10)
-                return "0" + number;
-            else
-                return number;
-        }
-        function updateClock() {
-            var now = new Date(), // current date
-            months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']// you get the idea
-            time = prependZero(now.getHours()) + ':' + prependZero(now.getMinutes()) + ':' + prependZero(now.getSeconds()), // again, you get the idea
-            
-            // a cleaner way than string concatenation
-            date = [now.getDate(), 
-                    months[now.getMonth()],
-                    now.getFullYear()].join(' ');
+      function prependZero(number) {
+        if (number < 10) return "0" + number;
+        else return number;
+      }
+      function updateClock() {
+        var now = new Date(), // current date
+          months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ]; // you get the idea
+        (time =
+          prependZero(now.getHours()) +
+          ":" +
+          prependZero(now.getMinutes()) +
+          ":" +
+          prependZero(now.getSeconds())), // again, you get the idea
+          // a cleaner way than string concatenation
+          (date = [
+            now.getDate(),
+            months[now.getMonth()],
+            now.getFullYear(),
+          ].join(" "));
 
-            // set the content of the element with the ID time to the formatted string
-            document.getElementById('time').innerHTML = [time].join(' / ');
-            document.getElementById('date').innerHTML = [date].join(' / ');
+        // set the content of the element with the ID time to the formatted string
+        document.getElementById("time").innerHTML = [time].join(" / ");
+        document.getElementById("date").innerHTML = [date].join(" / ");
 
-            // call this function again in 1000ms
-            setTimeout(updateClock, 100);
-        }
-        updateClock(); // initial call
+        // call this function again in 1000ms
+        setTimeout(updateClock, 100);
+      }
+      updateClock(); // initial call
     </script>
-</body>
+  </body>
 </html>
