@@ -1,12 +1,12 @@
 * {
   font-family: "Helvetica Neue", sans-serif;
+  backdrop-filter: brightness(50%);
 }
 
 body {
   background-image: url(MONKEY!.jpeg);
   background-repeat: no-repeat;
   background-size: auto;
-  backdrop-filter: brightness(50%);
   color: white;
 }
 
