@@ -8,7 +8,7 @@ body {
 
 #heroimg {
   /* The image used */
-  background-image: url(MONKEY!.jpeg);
+  background-image: url("MONKEY!.jpeg");
 
   /* Add the blur effect */
   filter: blur(10px);
